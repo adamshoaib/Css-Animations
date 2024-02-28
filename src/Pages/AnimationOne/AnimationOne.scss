@@ -32,51 +32,157 @@
   height: 0px;
 }
 
+// Images and animations
+
+.grave-img {
+  position: absolute;
+  bottom: 100px;
+  left: 100px;
+}
+
+.grave-shake {
+  animation: moveGrave 1s ease-in infinite;
+}
+
+@keyframes moveGrave {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  75% {
+    transform: rotateZ(10deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+.ghost-img {
+  display: none;
+  position: absolute;
+  bottom: 120px;
+  left: 110px;
+  z-index: 999;
+}
+
+.awake-ghost {
+  display: block;
+  animation: ghostScare 5s ease-out 1 forwards;
+}
+
+@keyframes ghostScare {
+  0% {
+    opacity: 0;
+    bottom: 120px;
+    left: 130px;
+  }
+  25% {
+    opacity: 10;
+    bottom: 170px;
+    left: 90px;
+  }
+  50% {
+    opacity: 50;
+    bottom: 190px;
+    left: 130px;
+  }
+  75% {
+    opacity: 10;
+    bottom: 220px;
+    left: 90px;
+  }
+  100% {
+    opacity: 70;
+    bottom: 250px;
+    left: 110px;
+  }
+}
+
+.snail-img {
+  position: absolute;
+  bottom: 80px;
+  animation: snailMove 150s linear infinite;
+  z-index: 99999;
+}
+
+@keyframes snailMove {
+  from {
+    transform: translateX(10px);
+  }
+  to {
+    transform: translateX(1800px);
+  }
+}
+
+.bird-img {
+  position: absolute;
+  transform: scaleX(-1);
+  animation: frogJump 1s linear infinite, frogMove 20s linear infinite;
+  z-index: 99999;
+  top: 150px;
+}
+
+@keyframes frogJump {
+  0% {
+    top: 150px;
+    transform: scaleX(-1);
+  }
+  50% {
+    top: 200px;
+    transform: scaleX(-1);
+  }
+  100% {
+    top: 150px;
+    transform: scaleX(-1);
+  }
+}
+
+@keyframes frogMove {
+  0% {
+    transform: translateX(0px) scaleX(-1);
+  }
+  50% {
+    transform: translateX(500px) scaleX(-1);
+  }
+  100% {
+    transform: translateX(1200px) scaleX(-1);
+  }
+}
+
+.sun-img {
+  position: absolute;
+  top: 30px;
+  left: 300px;
+  animation: sunshine 2s linear infinite;
+}
+
+@keyframes sunshine {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .cloud-img {
   scale: (1);
-  animation-name: cloudmove;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-.car-img {
-  position: absolute;
-  top: -120px;
-  animation-name: carMove;
-  animation-duration: 12s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.ambulance-img {
-  position: absolute;
-  top: 35px;
-  animation-name: ambulanceMove;
-  animation-duration: 6s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-@keyframes ambulanceMove {
-  from {
-    transform: translateX(-100px);
-  }
-
-  to {
-    transform: translateX(1800px);
-  }
-}
-
-@keyframes carMove {
-  from {
-    transform: translateX(-100px);
-  }
-
-  to {
-    transform: translateX(1800px);
-  }
+  animation: cloudmove 70s linear infinite;
+  z-index: 99;
 }
 
 @keyframes cloudmove {
@@ -92,6 +198,59 @@
     transform: translateX(0) scale(1);
   }
 }
+
+.white-cloud-img {
+  animation: whiteCloudmove 70s linear infinite;
+  opacity: 100%;
+}
+
+@keyframes whiteCloudmove {
+  0% {
+    transform: translateX(100%) translateY(70px) scale(1);
+  }
+
+  50% {
+    transform: translateX(-200px) translateY(70px) scale(1.1);
+  }
+
+  100% {
+    transform: translateX(100%) translateY(70px) scale(1);
+  }
+}
+
+.car-img {
+  position: absolute;
+  top: -120px;
+  animation: carMove 12s linear infinite;
+}
+
+@keyframes carMove {
+  from {
+    transform: translateX(-100px);
+  }
+
+  to {
+    transform: translateX(1800px);
+  }
+}
+
+.ambulance-img {
+  position: absolute;
+  top: 70px;
+  animation: ambulanceMove 6s linear infinite reverse;
+}
+
+@keyframes ambulanceMove {
+  from {
+    transform: translateX(-100px) scaleX(-1);
+  }
+
+  to {
+    transform: translateX(1800px) scaleX(-1);
+  }
+}
+
+// Hover Button
 
 .hover-button {
   width: 100px;
