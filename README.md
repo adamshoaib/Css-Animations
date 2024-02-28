@@ -1,6 +1,6 @@
 # Simple Animations using CSS
 
-[![Demo](./src/Assets/videoGif.gif)]
+![Demo](./src/Assets/videoGif.gif)
 
 ## To run the application
 
