@@ -1,6 +1,6 @@
 # Simple Animations using CSS
 
-[![Demo]](./src/Assets/Video.mov)
+[![Demo]](https://www.youtube.com/watch?v=qtD8Pr_fHgk)
 
 ## To run the application
 
